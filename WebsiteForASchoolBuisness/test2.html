@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images with Text</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        img {
+            width: 200px; /* Adjust the size as needed */
+            height: 150px; /* Adjust the size as needed */
+            object-fit: cover;
+            border: 1px solid #ddd; /* Border for better visibility */
+            border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="image-container">
+            <img src="photo1.png" alt="Image 1">
+            <div>
+                <p>Line 1</p>
+                <p>Line 2</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="photo1.png" alt="Image 2">
+            <div>
+                <p>Line 1</p>
+                <p>Line 2</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="photo1.png" alt="Image 3">
+            <div>
+                <p>Line 1</p>
+                <p>Line 2</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="image-container">
+            <img src="photo1.png" alt="Image 4">
+            <div>
+                <p>Line 1</p>
+                <p>Line 2</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="photo1.png" alt="Image 5">
+            <div>
+                <p>Line 1</p>
+                <p>Line 2</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="photo1.png" alt="Image 6">
+            <div>
+                <p>Line 1</p>
+                <p>Line 2</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

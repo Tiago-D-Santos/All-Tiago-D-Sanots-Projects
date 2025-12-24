@@ -1,0 +1,268 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Website Title</title>
+        <style>
+            body {
+                background-color: #FFF0A5;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                overflow: hidden; /* Prevent scrolling */
+            }
+
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            main {
+                padding: 20px;
+                flex-grow: 1; /* Allow main content to take up remaining space */
+                overflow: auto; /* Enable scrolling for main content */
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            header .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            header .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #333;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            header .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            header .dropdown-content a:hover {
+                background-color: #555;
+            }
+
+            header .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            header button {
+                background-color: #F7D83C;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+            }
+
+            .styled-image {
+                width: 100%; /* Set the width to 100% of the page */
+                height: 30vh; /* Set the height to 30% of the viewport height */
+                object-fit: cover; /* Maintain aspect ratio and cover the container */
+                display: block; /* Remove extra spacing below the image */
+                border: 2px solid #333; /* Add a border around the image */
+                border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+                margin: 0; /* Remove margin */
+            }
+
+            #container {
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                top: 30vh; /* Center vertically at 30% from the top */
+                transform: translateY(-50%); /* Adjust to center exactly */
+            }
+
+            #button1,
+            #button2 {
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            #button3 {
+                position: fixed;
+                top: 32vh; /* Adjust as needed */
+                left: 50%; /* Center horizontally at 50% */
+                transform: translateX(-50%); /* Adjust to center exactly */
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            /*in body text*/
+            #text1 {
+                position: fixed;
+                top: 40vh; /* Adjust as needed */
+                left: 40%;
+                color: #333;
+                font-size: 4vw; /* Adjust the font size as needed */
+                white-space: nowrap; /* Prevent text from wrapping */
+                font-family: "Adobe Song Std L", serif; /* Change the font family */
+                font-weight: bold; /* Make the text bold */
+                text-decoration: underline; /* Underline the text */
+            }
+
+            /*sur image text*/
+            #text2 {
+                position: fixed;
+                top: 20vh; /* Adjust as needed */
+                left: 35%;
+                color: #FFF0A5;
+                font-size: 3vw; /* Adjust the font size as needed */
+                white-space: nowrap; /* Prevent text from wrapping */
+            }
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                margin: 2%;
+            }
+            
+            .image-container {
+                text-align: center;
+                border: 0% solid #333;
+                padding: 2%;
+            }
+            
+
+            img {
+                width: 60%; /* Adjust the size as needed */
+                height: auto; /* Maintain aspect ratio */
+                object-fit: cover;
+                border: 1px solid #ddd; /* Border for better visibility */
+                border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <div>
+                <p>Your Company Name</p>
+            </div>
+            <div class="dropdown">
+                <button>Options</button><!--onclick="alert('Select an option')"-->
+                <div class="dropdown-content">
+                    <a href="link1.html">Option 1</a>
+                    <a href="link2.html">Option 2</a>
+                    <a href="link3.html">Option 3</a>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <button id="button1">Location</button>
+            <button id="button2">Category</button>
+        </div>
+        <main>
+            <!-- Your main content goes here -->
+            <img src="photo1.png" alt="Description of your image" class="styled-image">  
+            <p>...</p><!-- This is the main content of your website.-->
+            <div class="row">
+                <div class="image-container">
+                    <img src="photo1.png" alt="Image 1">
+                    <div>
+                        <p>Line 1</p>
+                        <p>Line 2</p>
+                    </div>
+                </div>
+        
+                <div class="image-container">
+                    <img src="photo1.png" alt="Image 2">
+                    <div>
+                        <p>Line 1</p>
+                        <p>Line 2</p>
+                    </div>
+                </div>
+        
+                <div class="image-container">
+                    <img src="photo1.png" alt="Image 3">
+                    <div>
+                        <p>Line 1</p>
+                        <p>Line 2</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="image-container">
+                    <img src="photo1.png" alt="Image 4">
+                    <div>
+                        <p>Line 1</p>
+                        <p>Line 2</p>
+                    </div>
+                </div>
+        
+                <div class="image-container">
+                    <img src="photo1.png" alt="Image 5">
+                    <div>
+                        <p>Line 1</p>
+                        <p>Line 2</p>
+                    </div>
+                </div>
+        
+                <div class="image-container">
+                    <img src="photo1.png" alt="Image 6">
+                    <div>
+                        <p>Line 1</p>
+                        <p>Line 2</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        </footer>
+
+        <button id="button3">Search</button>
+
+        <div id="text1">Where To Eat?</div>
+        <div id="text2">Find a restaurant near me</div>
+
+        <script defer>
+            document.getElementById('button1').addEventListener('click', function() {
+            console.log('Button 1 clicked');
+            });
+        
+            document.getElementById('button2').addEventListener('click', function() {
+            console.log('Button 2 clicked');
+            });
+
+            document.getElementById('button3').addEventListener('click', function() {
+            console.log('Button 3 clicked');
+            });
+        </script>
+
+    </body>
+    </html>

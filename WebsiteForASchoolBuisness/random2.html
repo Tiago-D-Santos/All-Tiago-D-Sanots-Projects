@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Divisions</title>
+    <style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    /* Apply styles to divisions */
+    .division {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        padding-top: 20px;
+    }
+
+    #division1 {
+        background-image: url('logo2.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 33.33%;
+    }
+
+    #division2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sub-division {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+    }
+
+    #sub-division1 {
+        background-color: #3498db;
+    }
+
+    #sub-division2 {
+        background-color: #27ae60;
+    }
+
+    #division3 {
+        background-color: #f39c12;
+    }
+
+    /* Media query for small screens */
+    @media only screen and (max-width: 600px) {
+        #division2 {
+            flex-direction: column;
+        }
+
+        .sub-division {
+            width: 100%;
+        }
+    }
+
+    .dropdown2 {
+        display: block; /* Change display to block */
+        margin-bottom: 10px; /* Add margin to create space between buttons */
+    }
+
+    .dropdown2-content {
+        display: none;
+        position: absolute; /* Set position to absolute */
+        background-color: #f9f9f9;
+        min-width: 160px;
+        width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .dropdown2-content a {
+        color: black;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .dropdown2-content a:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown2-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown2:hover .dropdown2-content {
+        display: block;
+    }
+
+    .dropbtn2 {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 15px 50px;
+        font-size: 16px;
+        border: 2px solid rgb(0,0,0);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="division1" class="division">
+        <h2>Division 1</h2>
+        <p>This is the content of division 1.</p>
+    </div>
+    
+    <div id="division2" class="division">
+        <div class="sub-division" id="sub-division1">
+            <div class="dropdown2">
+                <button class="dropbtn2" id ="location">Location</button>
+                <div class="dropdown2-content">
+                    <a href="link1.html">Esch-zur-Alzette</a>
+                    <a href="link2.html">Luxembourg</a>
+                    <a href="link3.html">Capellen</a>
+                    <a href="link1.html">Remich</a>
+                    <a href="link2.html">Grevenmacher</a>
+                    <a href="link3.html">Mersch</a>
+                    <a href="link1.html">Redange</a>
+                    <a href="link2.html">Echternach</a>
+                    <a href="link3.html">Diekirch</a>
+                    <a href="link1.html">Wiltz</a>
+                    <a href="link2.html">Vianden</a>
+                    <a href="link3.html">Clervaux</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+                <button class="dropbtn2" id="category">Category</button>
+                <div class="dropdown2-content">
+                    <a href="link1.html">All</a>
+                    <a href="link2.html">Italian style pizza</a>
+                    <a href="link3.html">Sushi</a>
+                    <a href="link1.html">Burgers</a>
+                    <a href="link2.html">Chinese</a>
+                </div>
+            </div>
+        </div>
+        <div class="sub-division" id="sub-division2">
+            <h2>Sub-Division 2</h2>
+            <p>This is the content of sub-division 2.</p>
+        </div>
+    </div>
+    
+    <div id="division3" class="division">
+        <h2>Division 3</h2>
+        <p>This is the content of division 3.</p>
+    </div>
+
+    <script>
+        var locationa = document.getElementById("location");
+        locationa.textContent="location";
+
+    </script>
+</body>
+</html>
+

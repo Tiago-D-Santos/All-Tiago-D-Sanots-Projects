@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colored Containers</title>
+<style>
+    /* Define styles for containers */
+    .container {
+        height: 100vh; 
+        display: flex;
+        flex-direction: column; 
+    }
+
+    
+    .container1 {
+        background-color: rgb(0,0,0); 
+        flex-grow: 1; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        color : rgb(255,226,130); 
+        padding: 0 20px; /* Add padding to prevent text from going off the screen */
+        box-sizing: border-box;
+    }
+
+    .left-div{
+        width:50%;
+        text-align: left;
+    }
+    .right-div{
+        width:50%;
+        text-align: right;
+    }
+    
+    .container3 {
+        background-color: rgb(0,0,0); 
+        flex-grow: 1; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color : rgb(255,226,130); 
+    }
+
+    .container2 {
+        background-color: rgb(255, 226, 130);
+        flex-grow: 9; 
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .sub-container {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    align-items: center;
+    }
+
+    .sub-container > div {
+        width: calc(33.33% - 20px); 
+        height: calc(50% - 20px); 
+        background-color: rgb(255, 226, 130);
+        margin: 1px;
+        display: flex;
+        flex-direction: column; /* Arrange children vertically */
+        justify-content: top;
+        align-items: center;
+        font-size: 18px;
+        color: white;
+    }
+
+    .sub-container > div img {
+        max-width: 100%; /* Ensure image does not exceed the div width */
+        max-height: 75%; /* Maintain aspect ratio */
+    }
+
+    .sub-container > div h1 {
+        margin: 1px; /* Adjust paragraph margin */
+        white-space: nowrap;
+        color:rgb(43, 28, 0);
+    }
+
+    .sub-container > div p {
+        margin: 1px; /* Adjust paragraph margin */
+        white-space: nowrap;
+        color: rgb(43, 28, 0);
+    }
+
+    .sub-container1 {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/58/AcetoFive.JPG"); 
+        background-size: cover; 
+        background-position: center; 
+        flex-grow: 1; 
+        display: flex;
+        /*justify-content: center;
+        align-items: center;*/
+        font-size: 18px;
+        color: white;
+        flex-direction: column;
+    }
+
+    
+
+    .middleText {
+      color: rgb(0,0,0);
+      font: Arial;
+      font-size: 24px;
+      text-align: center;
+      background-color: rgb(255,226,130); 
+    }
+    .buttonInMiddleContainer{
+    	display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    /*
+    .buttonInMiddle {
+        margin: 0 3px; 
+        border-radius: 5px;
+        width: 50%; 
+        max-width: 10em; 
+        height: 3em; 
+        font-size: 1em; 
+        padding: 0.5em 1em;
+    }
+    */
+
+    .buttonInMiddle2 {
+        margin: 0 3px; 
+        border-radius: 5px;
+        width: 100%; 
+        max-width: 10em; /* Maximum width */
+        height: 3em; 
+        font-size: 1em; 
+        padding: 0.5em 1em;
+        background-color: #ffffff;
+    }
+
+    .buttonLanguageSelector {
+        cursor: pointer; /* Change cursor to pointer on hover */
+        border: none; /* Remove default border */
+        padding: 0; /* Remove any default padding */
+        background: none; /* Remove any default background */
+        outline: none; /* Remove outline on focus */
+        width: 40px; /* Adjust as needed */
+        height: 40px; /* Maintain aspect ratio */
+        float: left;
+        margin-right: 30px; /* Add some margin between the button and other elements */
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 10em; /* Width of the dropdown menu */
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        right:0;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn {
+        background-color: #000000;
+        color: white;
+        padding: 16px;
+        font-size: 1em;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .dropdown2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown2-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        right:0;
+        max-width: 160px;
+        border: 1px solid #ccc; /* Add border */
+        border-radius: 5px; /* Optional: Add border radius for a rounded appearance */
+    }
+
+    .dropdown2-content a {
+        color: black;
+        padding: 10px 16px; /* Reduce padding */
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #ccc; /* Add border bottom for spacing */
+    }
+
+    .dropdown2-content a:last-child {
+        border-bottom: none; /* Remove border bottom for the last item */
+    }
+
+    .dropdown2-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown2:hover .dropdown2-content {
+        display: block;
+    }
+
+    .dropbtn2 {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 15px 50px; /* Increase padding to make the button bigger */
+        font-size: 16px;
+        border: 2px solid rgb(0,0,0);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+
+    
+
+    h1 {
+        font-size: 24px;
+    }
+
+    
+    
+
+    @media screen and (max-width: 600px) {
+        .buttonInMiddle {
+            width: 80%; /* Adjust as needed for smaller screens */
+        }
+        .buttonInMiddle2 {
+            width: 80%; /* Adjust as needed for smaller screens */
+        }  
+        h1 {
+            font-size: 18px; /* Adjust the font size for smaller screens */
+        }
+    }
+    
+</style>
+</head>
+<body>
+
+<!-- main part -->
+<div class="container">
+    <div class="container1">
+        <div class="left-div">
+            <img src="logo.webp" style="width: 200px; height: 100px;">
+                
+            
+        </div>
+
+        <div class="right-div">
+            <div class="dropdown">
+            <button class="dropbtn" id="menu">MENU</button>
+                <div class="dropdown-content">
+                    <a href="random3.html">random</a>
+                    <a href="link2.html">contact us</a>
+                    <a href="link3.html">contact developper</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <!-- First half is empty -->
+        <div class="sub-container1">
+            <div>
+                <img src="france.png" alt="Button" class="buttonLanguageSelector" id="buttonlang1">
+            </div>
+            <div>
+                <img src="uk.png" alt="Button" class="buttonLanguageSelector" id="buttonlang2">
+            </div>
+            <div>
+                <img src="luxembourg.png" alt="Button" class="buttonLanguageSelector" id="buttonlang3">
+            </div>
+            
+            
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <h1 id="title1">Find a restaurant near you</h1>
+            </div>
+        	<div class="buttonInMiddleContainer">
+            	<!--<button class="buttonInMiddle">Location </button>
+                <button class="buttonInMiddle">Category </button>-->
+                <div class="dropdown2">
+                    <button class="dropbtn2">Location</button>
+                        <div class="dropdown2-content">
+                            <a href="link1.html">Esch-zur-Alzette</a>
+                            <a href="link2.html">Luxembourg</a>
+                            <a href="link3.html">Capellen</a>
+                            <a href="link1.html">Remich</a>
+                            <a href="link2.html">Grevenmacher</a>
+                            <a href="link3.html">Mersch</a>
+                            <a href="link1.html">Redange</a>
+                            <a href="link2.html">Echternach</a>
+                            <a href="link3.html">Diekirch</a>
+                            <a href="link1.html">Wiltz</a>
+                            <a href="link2.html">Vianden</a>
+                            <a href="link3.html">Clervaux</a>
+                        </div>
+                </div>
+                <div class="dropdown2">
+                    <button class="dropbtn2">Category</button>
+                        <div class="dropdown2-content">
+                            <a href="link1.html">All</a>
+                            <a href="link2.html">Italian style pizza</a>
+                            <a href="link3.html">Sushi</a>
+                            <a href="link1.html">Burgers</a>
+                            <a href="link2.html">Chinese</a>
+                        </div>
+                </div>
+            </div>
+            <div class="buttonInMiddleContainer">
+            	<button class="buttonInMiddle2">Search </button>
+            </div>
+            <h1></h1><!--white space-->
+        </div>
+
+        <div class="middleText">
+          <span style="text-decoration: underline;" id="title2">Where To Eat</span>
+
+        </div>
+        
+        <!-- Second half contains six divisions -->
+        <div class="sub-container">
+            <div>
+                <img src="resto1.jpg" alt="Description of the image">
+                <h1>resto 1</h1>
+                <p>location 1</p>
+            </div>
+            <div>
+                <img src="resto2.jpg" alt="Description of the image">
+                <h1>resto 2</h1>
+                <p>location 2</p>
+            </div>
+            <div>
+                <img src="resto2.jpg" alt="Description of the image">
+                <h1>resto 3</h1>
+                <p>location 3</p>
+            </div>
+            <div>
+                <img src="resto2.jpg" alt="Description of the image">
+                <h1>resto 4</h1>
+                <p>location 4</p>
+            </div>
+            <div>
+                <img src="resto2.jpg" alt="Description of the image">
+                <h1>resto 5</h1>
+                <p>location 5</p>
+            </div>
+            <div>
+                <img src="resto2.jpg" alt="Description of the image">
+                <h1>resto 6</h1>
+                <p>location 6</p>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        © 2023 where2eat
+    </div>
+</div>
+
+<script>
+    document.getElementById("buttonlang1").addEventListener("click", function() {
+        console.log("Button languguage1 clicked"); 
+
+        var title1a = document.getElementById("title1");
+        title1a.textContent="Trouvez un restaurant près de chez vous";
+
+        var title2a = document.getElementById("title2");
+        title2a.textContent="Où manger";
+
+        var menua = document.getElementById("menu");
+        menua.textContent="MENU";
+    });
+    document.getElementById("buttonlang2").addEventListener("click", function() {
+        console.log("Button languguage2 clicked"); // Print message to console
+
+        var title1a = document.getElementById("title1");
+        title1a.textContent="Find a restaurant near you";
+
+        var title2a = document.getElementById("title2");
+        title2a.textContent="Where To Eat";
+
+        var menua = document.getElementById("menu");
+        menua.textContent="MENU";
+    });
+    document.getElementById("buttonlang3").addEventListener("click", function() {
+        console.log("Button languguage3 clicked"); // Print message to console
+
+        var title1a = document.getElementById("title1");
+        title1a.textContent="Fannt e Restaurant bei Iech";
+
+        var title2a = document.getElementById("title2");
+        title2a.textContent="Wou iessen";
+
+        var menua = document.getElementById("menu");
+        menua.textContent="Menü";
+    });
+
+</script>
+</body>
+</html>

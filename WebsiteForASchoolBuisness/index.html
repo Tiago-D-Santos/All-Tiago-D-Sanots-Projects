@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        main {
+            padding: 20px;
+            flex-grow: 1; /* Allow main content to take up remaining space */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        header .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        header .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        header .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        header .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        header .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        header button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .styled-image {
+            width: 100%; /* Set the width to 100% of the page */
+            height: 30vh; /* Set the height to 30% of the viewport height */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            display: block; /* Remove extra spacing below the image */
+            border: 2px solid #333; /* Add a border around the image */
+            border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+            margin: 0; /* Remove margin */
+        }
+
+        #container {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            top: 30vh; /* Center vertically at 50% from the top */
+            transform: translateY(-50%); /* Adjust to center exactly */
+            }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <p>Your Company Name</p>
+        </div>
+        <div class="dropdown">
+            <button onclick="alert('Select an option')">Options</button>
+            <div class="dropdown-content">
+                <a href="link1.html">Option 1</a>
+                <a href="link2.html">Option 2</a>
+                <a href="link3.html">Option 3</a>
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <button id="button1">Button 1</button>
+        <button id="button2">Button 2</button>
+    </div>
+    <main>
+        <!-- Your main content goes here -->
+        <img src="photo1.png" alt="Description of your image" class="styled-image">  
+        <p>This is the main content of your website.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script defer>
+        document.getElementById('button1').addEventListener('click', function() {
+          console.log('Button 1 clicked');
+        });
+    
+        document.getElementById('button2').addEventListener('click', function() {
+          console.log('Button 2 clicked');
+        });
+    </script>
+
+</body>
+</html>
