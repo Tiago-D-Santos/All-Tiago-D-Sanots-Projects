@@ -1,0 +1,5 @@
+Map<?,?> map = new HashMap<Object, Object>();
+for(Entry<?, ?> e: map.entrySet()){
+    System.out.println("Key " + e.getKey());
+    System.out.println("Value " + e.getValue());
+}
